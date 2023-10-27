@@ -1,12 +1,12 @@
-# radm (Yet Another Stow-Based Dotfiles System Manager)
+# radm (ra dotfile manager)
 
 ## Features
 
-radm is a minimal, UNIX-based, cross-platform, hierarchical dotfiles manager.
+radm is a minimal, UNIX-based, cross-platform, hierarchical dotfiles manager (re)written in python.
 
 Core principles are:
 
-- **Minimal dependencies:** Only Bash and [GNU Stow](https://www.gnu.org/software/stow/).
+- **Minimal dependencies:** Only Python and [GNU Stow](https://www.gnu.org/software/stow/).
 - **Cross-platform:** With built-in platform detection, you can install your
   dotfiles on Linux and MacOS.
 - **Hierarchical directory structure:** The `base` directory.
@@ -18,7 +18,9 @@ Core principles are:
 - **Non-destructive:** Your existing dotfiles will not be touched unless you
   explicitly beg radm to do so.
 - **Creates symlinks only:** radm just creates the symlinks. It's up to you to
-  handle version control for your dotfiles.
+  handle version control for your dotfiles. The .gitignore file ignores your dot
+  files in the macos, linux, and base directories. BACK THEM UP. (e.g I sync my radm
+  directory, and recommend Syncthing)
 
 ## Installation
 
