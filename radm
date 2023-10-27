@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+import os
+import sys
+
+
+def usage():
+    print(
+        """Usage: radm [-h/--help] [install|restore-backup|eject]
+
+    -h/--help: Show this help message
+    
+    install:        Install or sync the dotfiles as symlinks in your home folder.
+    restore-backup: Restore the backup of your dotfiles created by install. 
+    eject:          Replace the symlinks in your home folder with hard copies."""
+    )
+
+
+# if they dont exist, create the backup, macos, linux and base directories in the working directory
+if not os.path.exists("backup"):
+    os.mkdir("backup")
+
+if not os.path.exists("macos"):
+    os.mkdir("macos")
+
+if not os.path.exists("linux"):
+    os.mkdir("linux")
+
+if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
+    usage()
+    sys.exit(0)
+
+script_dir = os.path.dirname(os.path.realpath(__file__))
+
+if sys.argv[1] == "install":
+    os.system(f"{script_dir}/.internal-scripts/install.py")
+    sys.exit(0)
+
+if sys.argv[1] == "restore-backup":
+    os.system(f"{script_dir}/.internal-scripts/restore-backup.py")
+    sys.exit(0)
+
+if sys.argv[1] == "eject":
+    os.system(f"{script_dir}/.internal-scripts/eject.py")
+    sys.exit(0)
