@@ -32,7 +32,7 @@ if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
 if sys.argv[1] == "install":
-    os.system(f"{script_dir}/.internal-scripts/install.py")
+    os.system(f"{script_dir}/.internal-scripts/install.py {script_dir}")
     sys.exit(0)
 
 if sys.argv[1] == "restore-backup":

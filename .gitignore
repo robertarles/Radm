@@ -1,6 +1,6 @@
-backup
-.DS-Store
-macos/**
-linux/**
-base/**
+**/.DS-Store
+backup/
+macos/
+linux/
+base/
 
